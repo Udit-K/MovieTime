@@ -61,6 +61,7 @@ public class VideoServiceImp implements VideoService{
 	}
 
 	@Override
+	@Transactional
 	public void delete(String id) {
 		Video existing = repository.findOne(id);
 		if(existing == null) {

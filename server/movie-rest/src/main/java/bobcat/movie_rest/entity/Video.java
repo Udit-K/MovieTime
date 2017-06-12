@@ -32,7 +32,10 @@ public class Video {
 	private String runtime;
 	private String genre;
 	private String director;
+	
+
 	private String writer;
+	
 	private String actors;
 	private String plot;
 	private String language;
@@ -45,14 +48,14 @@ public class Video {
 	private String imdbId;
 	private String type;
 	
-	public Video() {
 	
-	}
 
-	public Video(String title, int year, String rated, String released, String runtime, String genre, String director,
-			String writer, String actors, String plot, String language, String country, String awards, String poster,
-			int metascore, float imdbRating, int imdbVotes, String imdbId, String type) {
+	
+	public Video(String id, String title, int year, String rated, String released, String runtime, String genre,
+			String director, String writer, String actors, String plot, String language, String country, String awards,
+			String poster, int metascore, float imdbRating, int imdbVotes, String imdbId, String type) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.rated = rated;
@@ -72,6 +75,20 @@ public class Video {
 		this.imdbVotes = imdbVotes;
 		this.imdbId = imdbId;
 		this.type = type;
+	}
+
+	public Video() {
+		
+	}
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -226,6 +243,7 @@ public class Video {
 		this.type = type;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Video [id=" + id + ", title=" + title + ", year=" + year + ", rated=" + rated + ", released=" + released
@@ -234,6 +252,7 @@ public class Video {
 				+ ", awards=" + awards + ", poster=" + poster + ", metascore=" + metascore + ", imdbRating="
 				+ imdbRating + ", imdbVotes=" + imdbVotes + ", imdbId=" + imdbId + ", type=" + type + "]";
 	}
+
 	
 	
 }

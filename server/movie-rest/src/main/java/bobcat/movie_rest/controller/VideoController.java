@@ -34,8 +34,13 @@ public class VideoController {
 	
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Video create(@RequestBody Video vid) {
+			if (vid.getWriter().length()> 255){
+				vid.setWriter("You exceed max length");
+				return vid;
+			}
 		
-		return service.create(vid);
+			return service.create(vid);
+	
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, path = "{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
