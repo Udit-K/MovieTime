@@ -18,9 +18,36 @@
     "angular": "^1.6.5",
     "bootstrap": "^3.3.7",
     "bootstrap-side-navbar": "^1.0.1",
-    "bootstrap-sidebar": "^0.2.2"
+    "bootstrap-sidebar": "^0.2.2",
+    "angular-route": "^1.6.5",
+    "angular-messages": "^1.6.5",
+    "ihover": "^1.0.0"
   },
   "resolutions": {
     "bootstrap": "^3.3.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    },
+    "ihover": {
+      "main": [
+        "dist/styles/main.css"
+      ]
+    }
+  },
+  "jquery": {
+    "main": []
   }
+
+
+
+
 }
