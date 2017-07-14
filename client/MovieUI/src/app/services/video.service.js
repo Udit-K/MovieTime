@@ -8,7 +8,7 @@
     videoService.$inject = ['$http', '$q', 'CONFIG'];
 
     function videoService($http, $q, CONFIG) {
-        self = this;
+        var self = this;
 
         self.getVideos = getVideos;
         self.getVideoById = getVideoById;

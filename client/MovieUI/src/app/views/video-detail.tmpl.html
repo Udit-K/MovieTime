@@ -2,12 +2,17 @@
 
 
 <div class="moviecard">
-    <div class="movie-poster"><img ng-src="{{videoDetailVm.video.poster}}" alt="{{videoDetailVm.video.title}}"></div>
+    <div class="movie-poster">
+        <img ng-src="{{videoDetailVm.video.poster}}" alt="{{videoDetailVm.video.title}}">
+    </div>
+
     <div id="movie-content">
         <div class="movie-ratings">
             <span class="star">★</span>
             <span class="score">{{videoDetailVm.video.imdbRating | number}}</span>
-            <span class="score-out-of">/10 (IMDB)</span></div>
+            <span class="score-out-of">/10 (IMDB)</span>
+        </div>
+        <br>
         <div class="movie-title">
             <a ng-href="http://www.imdb.com/title/{{videoDetailVm.video.imdbId}}" target="_blank">{{videoDetailVm.video.title}}</a>
             <span class="movie-year">{{videoDetailVm.video.year}}</span></div>

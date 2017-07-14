@@ -18,9 +18,12 @@
     <!-- endinject -->
 
     <!-- inject:css -->
+    <link rel="stylesheet" href="styles/animation.style.css">
     <link rel="stylesheet" href="styles/custom.style.css">
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/login.style.css">
+    <link rel="stylesheet" href="styles/signup.style.css">
     <link rel="stylesheet" href="styles/videodetail.style.css">
+    <link rel="stylesheet" href="styles/videoscroll.style.css">
     <!-- endinject -->
 
     <!-- app:css -->
@@ -29,26 +32,7 @@
 </head>
 
 <body>
-
-
-<header class="container">
-    <h1>MovieTime</h1>
-    <nav class="nav">
-        <ul class="nav nav-pills">
-            <li><a href="#!/login">Login</a> </li>
-            <li><a href="#!/signup">Sign up</a> </li>
-            <li><a href="#!/video">Dashboard</a> </li>
-
-        </ul>
-    </nav>
-</header>
-
-<section ng-view>
-
-
-
-</section>
-
+<div ng-view></div>
 
 
 <footer>
@@ -71,6 +55,7 @@
 <!-- inject:js -->
 <script src="app/app.js"></script>
 <script src="app/services/video.service.js"></script>
+<script src="app/services/user.service.js"></script>
 <script src="app/directives/video.directive.js"></script>
 <script src="app/controllers/videoHome.controller.js"></script>
 <script src="app/controllers/video-detail.controller.js"></script>

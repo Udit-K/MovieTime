@@ -1,43 +1,47 @@
-<h2>Sign Up</h2>
-<hr>
-<div class="container">
-    <div class="login_div">
-        <form>
-
-            <div class="form-group">
-                <label for="firstNameLoginText">First Name</label>
-                <input type="text" class="form-control" id="firstNameLoginText" placeholder="eg. John" required minlength="4">
-            </div>
-
-            <div class="form-group">
-                <label for="lastNameLoginText">Last Name</label>
-                <input type="text" class="form-control" id="lastNameLoginText" placeholder="eg. Robinson" required minlength="4">
-            </div>
 
 
 
-            <div class="form-group">
-                <label for="loginEmailText">Email address</label>
-                <input type="email" class="form-control" id="loginEmailText" placeholder="eg. xyz@abc.com" required>
-            </div>
+<!-- Signup Form Starts -->
 
-            <div class="form-group">
-                <label for="loginPasswordText">Password</label>
-                <input type="password" class="form-control" id="loginPasswordText" placeholder="Password" required minlength="6">
-            </div>
+<div class="container" id="wrap">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form class="form" role="form" name="signupForm" ng-submit="signupVm.createUser()">
+                <legend>Sign Up</legend>
+                <h4>Let's get you started</h4>
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name"  ng-model="signupVm.newUser.firstName" required minlength="4"/>
 
-            <div class="form-group">
-                <label for="confirmPasswordText">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPasswordText" placeholder="re-enter password" required minlength="6">
-            </div>
+                        <div ng-show="signupForm.firstName.$error" ng-if="signupForm.firstName.$dirty">
+                            <p ng-show="signupForm.firstName.$error.required" class="ValidationError">First Name is required</p>
+                            <p ng-show="signupForm.firstName.$error.minlength" class="ValidationError">First Name has to be at least 4 chars</p>
+                        </div>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <br>
 
-        <p> Already have an account? <a class="link" href="index.html"><strong>Sign in</strong></a></p>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  ng-model="signupVm.newUser.lastName" required minlength="4"required minlength="4"/>
+                        <div ng-show="signupForm.lastname.$error" ng-if="signupForm.lastname.$dirty">
+                            <p ng-show="signupForm.lastname.$error.required" class="ValidationError">Last Name is required</p>
+                            <p ng-show="signupForm.lastname.$error.minlength" class="ValidationError">Last Name has to be at least 4 chars</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  ng-model="signupVm.newUser.emailId" required/>
+                <br>
+                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  ng-model="signupVm.newUser.password" required/>
+                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
+                    Create my account</button>
+            </form>
+            <p class="text-center"> Already have an account? <a class="link" href="index.html"><strong>Sign in</strong></a></p>
+        </div>
     </div>
 </div>
+</div>
 
-
+<!-- Signup Form Ends -->

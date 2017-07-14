@@ -33,8 +33,8 @@
                 templateUrl: 'app/views/video-detail.tmpl.html',
                 controller: 'VideoDetailController',
                 controllerAs: 'videoDetailVm'
-            });
-            // .otherwise({redirectTo: '/videohome'});
+            })
+            .otherwise({redirectTo: '/login'});
     }
 
     runModule.$inject = [];
