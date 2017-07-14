@@ -2,12 +2,16 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 var inject = require('gulp-inject');
 var browsersync = require('browser-sync').create();
+
 var angularFileSort = require('gulp-angular-filesort');
 var filter = require('gulp-filter');
 var concat = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var merge = require('merge-stream');
+
+var angularFilesort = require('gulp-angular-filesort');
+
 var bowerFiles = require('main-bower-files');
 
 
@@ -24,6 +28,7 @@ gulp.task('clean', function () {
     return gulp.src(config.paths.build, {read: false})
         .pipe(clean());
 });
+
 
 gulp.task('minifyCss', function () {
 
@@ -59,7 +64,9 @@ gulp.task('minifyJs', function () {
 });
 
 
+
 gulp.task('inject', function () {
+
 
     var cssFiles = gulp.src([
         config.paths.src + '/**/*.css'
@@ -79,6 +86,25 @@ gulp.task('inject', function () {
 
 gulp.task('serve', ['inject'], function () {
 
+        var cssFiles = gulp.src([
+            config.paths.src + '/**/*.css'
+        ], {read: false});
+
+        var jsFiles = gulp.src([
+            config.paths.src + '/**/*.js'
+        ]);
+
+        return gulp.src(config.paths.src + '/index.html')
+            .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
+            .pipe(inject(cssFiles, {ignorePath: 'src', addRootSlash: false}))
+            .pipe(inject(jsFiles.pipe(angularFilesort()), {ignorePath: 'src', addRootSlash: false}))
+            .pipe(gulp.dest(config.paths.build));
+
+});
+
+gulp.task('serve',['inject'], function () {
+
+
     browsersync.init({
 
         server: {
@@ -92,6 +118,7 @@ gulp.task('serve', ['inject'], function () {
             config.paths.src + '/**/*'
         ]
     });
+
 
 
 });
@@ -134,3 +161,6 @@ gulp.task('build', ['minifyCss', 'minifyJs', 'htmls', 'fonts', 'others'], functi
         .pipe(gulp.dest(config.paths.build));
 
 });
+
+});
+
