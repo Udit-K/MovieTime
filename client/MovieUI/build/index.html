@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>MovieTime</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap-side-navbar/source/assets/stylesheets/navbar-fixed-side.css">
+    <link rel="stylesheet" href="/bower_components/ihover/dist/styles/main.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-sidebar/dist/css/sidebar.css">
+    <!-- endinject -->
+
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/animation.style.css">
+    <link rel="stylesheet" href="styles/custom.style.css">
+    <link rel="stylesheet" href="styles/login.style.css">
+    <link rel="stylesheet" href="styles/signup.style.css">
+    <link rel="stylesheet" href="styles/videodetail.style.css">
+    <link rel="stylesheet" href="styles/videoscroll.style.css">
+    <!-- endinject -->
+
+    <!-- app:css -->
+    <!-- endinject -->
+
+</head>
+
+<body>
+<div ng-view></div>
+
+
+<footer>
+
+
+
+</footer>
+
+<!-- bower:js -->
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/bower_components/bootstrap-sidebar/dist/js/sidebar.js"></script>
+<!-- endinject -->
+
+<!-- vendor:css -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<script src="app/app.js"></script>
+<script src="app/services/video.service.js"></script>
+<script src="app/services/user.service.js"></script>
+<script src="app/directives/video.directive.js"></script>
+<script src="app/controllers/videoHome.controller.js"></script>
+<script src="app/controllers/video-detail.controller.js"></script>
+<script src="app/controllers/signup.controller.js"></script>
+<script src="app/controllers/login.controller.js"></script>
+<script src="app/app.constant.js"></script>
+<!-- endinject -->
+
+<!-- app:js -->
+<!-- endinject -->
+
+
+</body>
+
+</html>
