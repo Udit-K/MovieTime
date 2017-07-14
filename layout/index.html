@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>MovieTime</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MOVIE TIME</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="menu-item active"><a href="#">Movies </a></li>
+                    <ul class="nav navbar-nav">
+                        <li class="menu-item"><a href="#">TV Shows </a></li>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item"><a href="#">Support <i class="fa fa-support"></i></a></li>
+                            <ul class="nav navbar-nav">
+                                <li class="menu-item"><a href="#">About <i class="fa fa-comments-o"></i></a></li>
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li>
+                                    <form class="navbar-search navbar-form" method="get" action="">
+                                        <input class="form-control" placeholder="Search" name="s" type="text">
+                                    </form>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <!-- DROPDOWN LOGIN STARTS HERE  -->
+                <ul id="signInDropdown" class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-info navbar-btn dropdown-toggle"><i class="glyphicon glyphicon-user"></i> Login <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li style="width: 250px;">
+                                <form class="navbar-form form" role="form">
+                                    <div class="form-group">
+                                      <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <!--EMAIL ADDRESS-->
+                                            <input id="emailInput" placeholder="email address" class="form-control" oninvalid="setCustomValidity('Please enter a valid email address!')" onchange="try{setCustomValidity('')}catch(e){}" required="" type="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                            <!--PASSWORD-->
+                                            <input id="passwordInput" placeholder="password" class="form-control" oninvalid="setCustomValidity('Please enter a password!')" onchange="try{setCustomValidity('')}catch(e){}" required="" type="password">
+                                        </div>
+                                    </div>
+                                    <!--  BASIC ERROR MESSAGE
+                                    <div class="form-group">
+                                    <label class="error-message color-red">*Email & password don't match!</label>
+                                    </div>
+                                    -->
+                                    <div class="form-group">
+                                        <!--BUTTON-->
+                                        <button type="submit" class="btn btn-primary form-control">Login</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <!--RESET PASSWORD LINK-->
+                                        <span class="pull-right"><a href="#">Forgot Password?</a></span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- DROPDOWN LOGIN ENDS HERE  -->
+            </div>
+        </div>
+    </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><img src="img/movietimelogo.png" id="logo">
+
+                </h1>
+                <h4 class="header-slogan">A source for your daily dose of entertainment</h4>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTU4MDU3NDQ5Ml5BMl5BanBnXkFtZTgwOTU5MDUxNTE@._V1_SX300.jpg" alt="avengers">
+                </a>
+                    <p class="bg-primary text-center"> Avengers: Age of Ultron</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg" alt="">
+                </a>
+                 <p class="bg-primary text-center"> The Avengers</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg" alt="">
+                </a>
+                 <p class="bg-primary text-center"> Shawshank Redemption</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg" alt="">
+                </a>
+
+                 <p class="bg-primary text-center"> Batman Begins</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center"> The Dark Knight</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center"> The Dark Knight Rises</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjU4NDExNDM1NF5BMl5BanBnXkFtZTgwMDIyMTgxNzE@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center"> The Revenant</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center">Star Wars: The Force Awakens</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center"> The Martian</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center">The Wolf of the Wallstreet</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMTUyMTE0ODcxNF5BMl5BanBnXkFtZTgwODE4NDQzNTE@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center"> Madmax: Fury Road</p>
+            </div>
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://ia.media-imdb.com/images/M/MV5BMjM2Nzg4MzkwOF5BMl5BanBnXkFtZTgwNzA0OTE3NjE@._V1_SX300.jpg" alt="">
+                </a>
+                <p class="bg-primary text-center"> Spectre</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center">Copyright &copy; MovieTime 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
