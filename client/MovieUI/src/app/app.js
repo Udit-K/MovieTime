@@ -48,6 +48,11 @@
                 controller: 'EditVideoController',
                 controllerAs: 'editVideoVm'
             })
+            .when('/top-rated', {
+                templateUrl: 'app/views/toprated.tmpl.html',
+                controller: 'VideoHomeController',
+                controllerAs: 'videoVm'
+            })
             .otherwise({redirectTo: '/login'});
     }
 

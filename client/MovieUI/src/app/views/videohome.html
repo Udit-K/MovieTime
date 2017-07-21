@@ -21,6 +21,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="#!/video">Home</a></li>
             </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#!/top-rated">Top Videos</a></li>
+            </ul>
 
             <ul class="nav navbar-nav">
                 <li>
@@ -55,6 +58,7 @@
 
 
 
+
 <!-- Filterbar ends -->
 
 
@@ -71,6 +75,12 @@
 
                             <h4 class="header-slogan"><strong class="text-warning text-uppercase"> MovieTime  </strong>   ...A source for your daily dose of entertainment</h4>
 
+                            <ul class="nav nav-pills">
+                                <h3>Sort By: </h3>
+                                <li role="presentation" ><button ng-click="videoVm.sorter.sortBy= 'imdbRating'; videoVm.sorter.sortOrder = !videoVm.sorter.sortOrder;" class="text-center text-primary">IMDB Rating</button></li>
+                                <li role="presentation"><button ng-click="videoVm.sorter.sortBy= 'released'; videoVm.sorter.sortOrder = !videoVm.sorter.sortOrder;" class="text-center text-warning">Year</button></li>
+                                <li role="presentation"><button ng-click="videoVm.sorter.sortBy= 'imdbVotes'; videoVm.sorter.sortOrder = !videoVm.sorter.sortOrder;" class="text-center text-danger" >IMDB Votes</button></li>
+                            </ul>
                         </div>
 
 
@@ -79,7 +89,7 @@
                     <div class="row" style="background: whitesmoke">
 
 
-                           <div ng-repeat="video in videoVm.allMovies | searchFor:searchString">
+                           <div ng-repeat="video in videoVm.allMovies | searchFor:searchString | orderBy: videoVm.sorter.sortBy: videoVm.sorter.sortOrder">
                                <div class="col-sm-4">
                                     <br>
                                    <div class="ih-item square effect13 left_to_right"><a href="#!/video-detail/{{video.id}}" >
@@ -88,7 +98,7 @@
                                        </div>
                                        <div class="info">
                                            <h3>{{video.genre}}</h3>
-                                           <h3 class="glyphicon glyphicon-star"> {{video.imdbRating}}/10</h3>
+                                           <h3 class="glyphicon glyphicon-star"> {{video.imdbRating}}/10 |  {{video.imdbVotes}} votes</h3>
                                            <h3>{{video.released | date: 'yyyy'}}</h3>
                                        </div></a></div>
                                    <br>

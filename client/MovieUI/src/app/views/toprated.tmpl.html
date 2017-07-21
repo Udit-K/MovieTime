@@ -1,0 +1,63 @@
+<div class="container">
+    <h1> <a ng-href="#!/video"> < Back</a></h1>
+    <div class="row">
+        <p class="text-center topbox text-uppercase">Top Videos</p>
+
+        <div class="col-sm-6">
+            <p class="text-center topVids">Top Movies</p>
+
+            <table class="table table-striped ">
+                <thead class="thead-inverse">
+                <tr>
+
+                    <!--<th>Poster</th>-->
+                    <!--<th>Rating</th>-->
+                    <!--<th>Title</th>-->
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="video in videoVm.allMovies | filter: {type: 'movie'} | orderBy: 'imdbRating': true">
+                    <td>{{$index + 1}}</td>
+                    <td><a href="#!/video-detail/{{video.id}}"><img style="height: 64px; width: 64px;" ng-src="{{video.poster}}" alt="img"></a> </td>
+
+                    <td><div class="glyphicon glyphicon-star"></div> {{video.imdbRating }}</td>
+                    <td>{{video.title}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+
+        <div class="col-sm-6">
+             <p class="text-center topVids">Top TV Shows</p>
+            <table class="table table-striped ">
+                <thead class="thead-inverse">
+                <tr>
+
+                    <!--<th>Poster</th>-->
+                    <!--<th>Rating</th>-->
+                    <!--<th>Title</th>-->
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="video in videoVm.allMovies | filter: {type: 'series'} | orderBy: 'imdbRating': true ">
+                    <td>{{$index + 1}}</td>
+                    <td><a href="#!/video-detail/{{video.id}}"><img style="height: 64px; width: 64px;" ng-src="{{video.poster}}" alt="img"> </a></td>
+                    <td><div class="glyphicon glyphicon-star"></div> {{video.imdbRating }}</td>
+                    <td>{{video.title}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
