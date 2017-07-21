@@ -1,47 +1,89 @@
 
+<!-- Animated Logo Start -->
 
+<div class="animate">
 
-<!-- Signup Form Starts -->
+    <div class="container">
+        <div class="row">
+            <svg viewBox="0 0 960 300">
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="50%" y="80%">Movie Time</text>
+                </symbol>
+                <g class = "g-ants">
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                </g>
+            </svg>
+        </div>
 
-<div class="container" id="wrap">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <form class="form" role="form" name="signupForm" ng-submit="signupVm.createUser()">
-                <legend>Sign Up</legend>
-                <h4>Let's get you started</h4>
-                <div class="row">
-                    <div class="col-xs-6 col-md-6">
-                        <input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name"  ng-model="signupVm.newUser.firstName" required minlength="4"/>
+        <!-- Animated Logo Ends -->
 
-                        <div ng-show="signupForm.firstName.$error" ng-if="signupForm.firstName.$dirty">
-                            <p ng-show="signupForm.firstName.$error.required" class="ValidationError">First Name is required</p>
-                            <p ng-show="signupForm.firstName.$error.minlength" class="ValidationError">First Name has to be at least 4 chars</p>
-                        </div>
+        <!-- Sign Up Form Starts -->
 
-
-
-                    </div>
-                    <div class="col-xs-6 col-md-6">
-                        <input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name"  ng-model="signupVm.newUser.lastName" required minlength="4"required minlength="4"/>
-                        <div ng-show="signupForm.lastname.$error" ng-if="signupForm.lastname.$dirty">
-                            <p ng-show="signupForm.lastname.$error.required" class="ValidationError">Last Name is required</p>
-                            <p ng-show="signupForm.lastname.$error.minlength" class="ValidationError">Last Name has to be at least 4 chars</p>
-                        </div>
-
-                    </div>
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="text-center"> Already have an account? <a class="link" href="index.html"><strong>Sign in</strong></a></p>
                 </div>
+                <div class="panel-body">
+                    <form role="form" ng-submit="signupVm.createUser()">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                                    <div class="form-group">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span>
+                                            <input class="form-control" placeholder="First Name" name="firstName" type="text" autofocus ng-model="signupVm.newUser.firstName" required>
+                                        </div>
 
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-user"></i>
+												</span>
+                                            <input class="form-control" placeholder="Last Name" name="lastName" type="text" autofocus ng-model="signupVm.newUser.lastName" required>
+                                        </div>
+                                    </div>
 
-                <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email"  ng-model="signupVm.newUser.emailId" required/>
-                <br>
-                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password"  ng-model="signupVm.newUser.password" required/>
-                <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
-                    Create my account</button>
-            </form>
-            <p class="text-center"> Already have an account? <a class="link" href="index.html"><strong>Sign in</strong></a></p>
+                                    <div class="form-group">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-envelope"></i>
+												</span>
+                                            <input class="form-control" placeholder="Email" name="email" type="text" autofocus ng-model="signupVm.newUser.emailId" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+												<span class="input-group-addon">
+													<i class="glyphicon glyphicon-lock"></i>
+												</span>
+                                            <input class="form-control" placeholder="Password" name="password" type="password" value="" ng-model="signupVm.newUser.password" required>
+
+                                        </div>
+
+                                        <label>Show Password:  <input type="checkbox" ng-model="showpassword" ng-checked="false"></label>
+                                        <input class="form-control" ng-show="showpassword" type="text" ng-model="signupVm.newUser.password">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign up">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</div>
+<!-- SignUp Form Ends -->
 
-<!-- Signup Form Ends -->
+<section style="text-align:center; margin:10px auto;"><p> &copy; Movie Time, Inc</a></p></section>

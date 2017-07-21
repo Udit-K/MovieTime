@@ -12,7 +12,9 @@
 
         self.getVideos = getVideos;
         self.getVideoById = getVideoById;
-
+        self.createVideo = createVideo;
+        self.deleteVideo = deleteVideo;
+        self.editVideo = editVideo;
         
         function getVideos() {
           return  $http.get(CONFIG.API_HOST + '/videos')
@@ -26,11 +28,26 @@
                 .then(successFn, errorFn);
         }
 
+        function createVideo(video) {
+
+            return $http.post(CONFIG.API_HOST + '/videos', video)
+                .then(successFn, errorFn);
+        }
+
+        function deleteVideo(id) {
+            return $http.delete(CONFIG.API_HOST + '/videos/' + id)
+                .then(successFn, errorFn);
+        }
+
+        function editVideo(id, video) {
+            return $http.put(CONFIG.API_HOST + '/videos/' + id, video)
+                .then(successFn, errorFn);
+        }
 
         function successFn(response) {
 
             return response.data; //RESOLVE
-           // console.log("RESOLVE: " + response.data)
+
         }
 
         function errorFn(response) {

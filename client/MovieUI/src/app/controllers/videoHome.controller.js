@@ -39,8 +39,8 @@
 
 
             videoVm.sorter = {
-                sortBy: 'imdbRating',
-                sortOrder: false
+                sortBy: 'released',
+                sortOrder: true
             };
 
 
