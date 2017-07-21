@@ -15,10 +15,14 @@
         videoDetailVm.video = {};
         videoDetailVm.comments = {};
         videoDetailVm.createComment = createComment;
-
+        videoDetailVm.avgUserRating = 0;
+        var count = 0;
+        var avg = 0;
         var getUserName = localStorage.getItem('myUser');
 
         videoDetailVm.myUser = JSON.parse(getUserName);
+
+
 
         init();
 
@@ -41,9 +45,19 @@
                 .then(function (response) {
                     videoDetailVm.comments = response;
                         console.log(response);
+                    for(var i in videoDetailVm.comments) {
+                        avg += parseInt(videoDetailVm.comments[i].userRating, 10);
+                        count++;
+                    }
+                    videoDetailVm.avgUserRating = avg/count;
+                    console.log("count: " + count + "total: " + avg + "avg: " + avgRating);
                 }, function (error) {
                     console.log(error);
                 });
+
+
+
+
         }
 
         function createComment() {
