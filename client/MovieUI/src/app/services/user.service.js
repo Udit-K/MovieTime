@@ -12,10 +12,7 @@
 
         self.signUpUser=signUpUser;
         self.signInUser = signInUser;
-        
-        
-        
-        
+
         
         function signInUser(email, pass) {
             return $http.get(CONFIG.API_HOST + "/users/" + email + "/" + pass)

@@ -20,7 +20,7 @@
         </svg>
     </div>
 
-</div>
+
 
 <!-- Animated Logo Ends -->
 
@@ -32,7 +32,7 @@
                     <strong> Sign in to continue</strong>
                 </div>
                 <div class="panel-body">
-                    <form role="form" ng-submit="loginVm.signIn()">
+                    <form role="form" name="signInForm" ng-submit="signInForm.$setPristine(); loginVm.signIn()">
                         <fieldset>
                             <div class="row">
                                 <div class="col-sm-12 col-md-10  col-md-offset-1 ">
@@ -54,17 +54,24 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
+
                                     </div>
+
+                                    <div class=" glyphicon glyphicon-hand-right"></div><a class="text-danger navbar-btn" ng-href="#!/admin" onClick=""> Admin Login Here</a>
+
                                 </div>
                             </div>
                         </fieldset>
                     </form>
                 </div>
                 <div class="panel-footer ">
-                    Don't have an account! <a ng-href="#!/signup" onClick=""> Sign Up Here </a>
+                    Don't have an account! <a ng-href="#!/signup" onClick=""> Sign Up Here </a><br>
                 </div>
+
             </div>
         </div>
     </div>
-
+</div>
 <!-- Login Form Ends -->
+
+<section style="text-align:center; margin:10px auto;"><p> &copy; Movie Time, Inc</a></p></section>

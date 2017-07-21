@@ -8,8 +8,9 @@
 }
 
 .poster {
-    height: 100%;
-    width: 147px;
+    height: 70%;
+    width: 50%;
+
 }
 
 
@@ -110,4 +111,18 @@
 
 .ValidationError {
     color: red;
+}
+
+body {
+    padding: 0px;
+}
+
+.error {
+    color: red;
+}
+
+.boxborder {
+    border: 2px dashed gray;
+    padding-left: 5px;
+    padding-bottom: 5px;
 }

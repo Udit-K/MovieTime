@@ -1,0 +1,182 @@
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-lg-12 boxborder">
+            <p class="text-center"> Edit Video<hr></p>
+            <form name="videoform" ng-submit="editVideoVm.updateVideo()" novalidate>
+                <div class="form-group">
+
+
+
+                    <label for="videoTitle">Title</label>
+
+                    <input type="text" class="form-control " id="videoTitle" name="videotitle" ng-model="editVideoVm.video.title"  >
+                    <div ng-messages="videoform.videotitle.$error" ng-if="videoform.videotitle.$dirty">
+                        <p ng-message="required" class="error">Title is required</p>
+                        <p ng-message="minlength" class="error">Title should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="videoYear">Year</label>
+                    <input type="number" class="form-control" id="videoYear" name="videoyear"  ng-model="editVideoVm.video.year" >
+                    <div ng-messages="videoform.videoyear.$error" ng-if="videoform.videoyear.$dirty">
+                        <p ng-message="required" class="error">Year is required</p>
+                        <p ng-message="minlength" class="error">Year should be in YYYY format</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="rated">Rated</label>
+                    <input type="text" class="form-control" id="rated" name="rated" placeholder="PG-13" ng-model="editVideoVm.video.rated" >
+                    <div ng-messages="videoform.rated.$error" ng-if="videoform.rated.$dirty">
+                        <p ng-message="required" class="error">Classification rating is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="released">Release Date</label>
+                    <input type="text" class="form-control" id="released" name="released" placeholder="2015-05-01" ng-model="editVideoVm.video.released" >
+                    <div ng-messages="videoform.released.$error" ng-if="videoform.released.$dirty">
+                        <p ng-message="required" class="error">Release Date is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="runTime">Run Time</label>
+                    <input type="text" class="form-control" id="runTime" name="runtime" placeholder="150 mins" ng-model="editVideoVm.video.runtime" >
+                    <div ng-messages="videoform.runtime.$error" ng-if="videoform.runtime.$dirty">
+                        <p ng-message="required" class="error">Runtime is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" class="form-control" id="genre" name="genre" placeholder="150 mins" ng-model="editVideoVm.video.genre" >
+                    <div ng-messages="videoform.genre.$error" ng-if="videoform.genre.$dirty">
+                        <p ng-message="required" class="error">Genre is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="director">Director</label>
+                    <input type="text" class="form-control" id="director" name="director" placeholder="Christopher" ng-model="editVideoVm.video.director"  >
+                    <div ng-messages="videoform.director.$error" ng-if="videoform.director.$dirty">
+                        <p ng-message="required" class="error">Director is required</p>
+                        <p ng-message="minlength" class="error">Director name should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="writer">Writer</label>
+                    <input type="text" class="form-control" id="writer" name="writer" placeholder="writer" ng-model="editVideoVm.video.writer" >
+                    <div ng-messages="videoform.writer.$error" ng-if="videoform.writer.$dirty">
+                        <p ng-message="required" class="error">writer is required</p>
+                        <p ng-message="minlength" class="error">writer name should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="actors">Actors</label>
+                    <input type="text" class="form-control" id="actors" name="actors" placeholder="actors" ng-model="editVideoVm.video.actors" minlength="4">
+                    <div ng-messages="videoform.actors.$error" ng-if="videoform.actors.$dirty">
+                        <p ng-message="required" class="error">actors is required</p>
+                        <p ng-message="minlength" class="error">actors name should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="plot">Plot</label>
+                    <textarea rows="4 " cols="50" class="form-control" id="plot" name="plot" placeholder="Plot twist" ng-model="editVideoVm.video.plot"  ></textarea>
+                    <div ng-messages="videoform.plot.$error" ng-if="videoform.plot.$dirty">
+                        <p ng-message="required" class="error">plot is required</p>
+                        <p ng-message="minlength" class="error">plot name should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="language">Language</label>
+                    <input type="text" class="form-control" id="language" name="language" placeholder="language" ng-model="editVideoVm.video.language" >
+                    <div ng-messages="videoform.language.$error" ng-if="videoform.language.$dirty">
+                        <p ng-message="required" class="error">language is required</p>
+                        <p ng-message="minlength" class="error">language name should be at least 4 characters</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="country" name="country" placeholder="country" ng-model="editVideoVm.video.country"  >
+                    <div ng-messages="videoform.country.$error" ng-if="videoform.country.$dirty">
+                        <p ng-message="required" class="error">country is required</p>
+
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="awards">Awards</label>
+                    <input type="text" class="form-control" id="awards" name="awards" placeholder="awards"ng-model="editVideoVm.video.awards"  >
+                    <div ng-messages="videoform.awards.$error" ng-if="videoform.awards.$dirty">
+                        <p ng-message="required" class="error">If no awards, type: n/a</p>
+
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="poster">Poster Link</label>
+                    <input type="text" class="form-control" id="poster" name="poster" placeholder="http://xyz.com/p.jpg" ng-model="editVideoVm.video.poster"  >
+                    <div ng-messages="videoform.poster.$error" ng-if="videoform.poster.$dirty">
+                        <p ng-message="required" class="error">poster is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="metaScore">Meta Score</label>
+                    <input type="text" class="form-control" id="metaScore" name="metascore" placeholder="7.9" ng-model="editVideoVm.video.metaScore"  >
+                    <div ng-messages="videoform.metascore.$error" ng-if="videoform.metascore.$dirty">
+                        <p ng-message="required" class="error">meta Score is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="imdbRating">Imdb Rating</label>
+                    <input type="text" class="form-control" id="imdbRating" name="imdbrating" placeholder="8.9" ng-model="editVideoVm.video.imdbRating" >
+                    <div ng-messages="videoform.imdbrating.$error" ng-if="videoform.imdbrating.$dirty">
+                        <p ng-message="required" class="error">imdb rating is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="imdbVotes">Imdb Votes</label>
+                    <input type="text" class="form-control" id="imdbVotes" name="imdbvotes" placeholder="8942" ng-model="editVideoVm.video.imdbVotes" >
+                    <div ng-messages="videoform.imdbvotes.$error" ng-if="videoform.imdbvotes.$dirty">
+                        <p ng-message="required" class="error">imdb Votes is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="imdbId">Imdb id</label>
+                    <input type="text" class="form-control" id="imdbId" name="imdbid" placeholder="tt987999" ng-model="editVideoVm.video.imdbId" >
+                    <div ng-messages="videoform.imdbid.$error" ng-if="videoform.imdbid.$dirty">
+                        <p ng-message="required" class="error">imdb id is required</p>
+                    </div>
+                </div>
+
+                <div class = "form-group">
+                    <label for="type">Type</label>
+                    <input type="text" class="form-control" id="type" name="type" placeholder="Movie/Series" ng-model="editVideoVm.video.type" >
+                    <div ng-messages="videoform.type.$error" ng-if="videoform.type.$dirty">
+                        <p ng-message="required" class="error">type id is required</p>
+                    </div>
+                </div>
+
+
+                <a ng-href="#!/admin"><button class="btn btn-primary">Cancel</button></a>
+                <button type="submit" ng-disabled="videoform.$invalid" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<section style="text-align:center; margin:10px auto;"><p> &copy; Movie Time, Inc</a></p></section>

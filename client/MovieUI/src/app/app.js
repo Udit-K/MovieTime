@@ -24,7 +24,6 @@
                 controllerAs: 'signupVm'
             })
             .when('/video', {
-
                 templateUrl: 'app/views/videohome.html',
                 controller: 'VideoHomeController',
                 controllerAs: 'videoVm'
@@ -33,6 +32,21 @@
                 templateUrl: 'app/views/video-detail.tmpl.html',
                 controller: 'VideoDetailController',
                 controllerAs: 'videoDetailVm'
+            })
+            .when('/comments/:id', {
+                templateUrl: 'app/views/review.tmpl.html',
+                controller: 'ReviewController',
+                controllerAs: 'reviewVm'
+            })
+            .when('/admin', {
+                templateUrl: 'app/views/add-video.tmpl.html',
+                controller: 'AddVideoController',
+                controllerAs: 'addVideoVm'
+            })
+            .when('/edit-video/:id',{
+                templateUrl: 'app/views/edit-video.tmpl.html',
+                controller: 'EditVideoController',
+                controllerAs: 'editVideoVm'
             })
             .otherwise({redirectTo: '/login'});
     }
