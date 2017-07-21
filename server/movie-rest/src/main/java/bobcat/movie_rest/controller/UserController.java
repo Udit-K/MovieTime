@@ -22,26 +22,23 @@ public class UserController {
 	
 	@Autowired
 	UserService service;
-
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<User> findAll() {
 		
 		return service.findAll();
 	}
-
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.GET, path = "{id}" , produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public User findOne(@PathVariable("id") String id) {
 		
 		return service.findOne(id);
 	}
-
+>>>>>>> origin/module-api
 	@RequestMapping(method=RequestMethod.GET, path="/{email}/{password}",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public User userAuth(@PathVariable("email") String email, @PathVariable("password") String password) {
 		return service.userAuth(email, password);
 	}
-
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public User create(@RequestBody User user) {
@@ -51,7 +48,6 @@ public class UserController {
 	
 	}
 	
-
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.PUT, path = "{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public User update(@PathVariable("id") String id,@RequestBody User user) {
@@ -59,7 +55,6 @@ public class UserController {
 		return service.update(id, user);
 	}
 	
-
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.DELETE, path = "{id}")
 	public void delete(@PathVariable("id") String id) {
