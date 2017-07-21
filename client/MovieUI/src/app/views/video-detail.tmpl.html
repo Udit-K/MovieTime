@@ -43,11 +43,11 @@
 </div>
 
             <div class="text-center text-uppercase">&nbsp;<strong>User Comments</strong></div>
-
+            <div class="text-center"><p class="text-danger" ng-if="videoDetailVm.avgUserRating">Average User Rating:  {{videoDetailVm.avgUserRating | number: "1"}}/5</p></div>
            <div class="moviecard" ng-show="videoDetailVm.comments">
                <div class="" ng-repeat="comment in videoDetailVm.comments">
                    <div class="glyphicon glyphicon-menu-right"> </div><span class="title"> {{comment.comment}}</span><br>
-                   <div class="glyphicon glyphicon-asterisk"><strong>{{comment.userRating}}</strong>/5 </div>
+                   <div class="glyphicon glyphicon-asterisk"><strong>{{comment.userRating  }}</strong>/5 </div>
 
                    <p class="text-warning"><span class="text-primary"> {{comment.commentBy}}</span>, {{comment.commentDate | date: 'medium'}} </p><hr>
 
